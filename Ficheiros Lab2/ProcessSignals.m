@@ -23,7 +23,7 @@ thetae = sigs(trash_time/T:end,2); % Potenci?metro - Potentiometer signal
 alphae = sigs(trash_time/T:end,3); % Extens?metro - Starin gage signal
 
 figure;
-subplot(4,1,1);
+subplot(3,1,1);
 
 plot(t_reg,utrend);
 title('Sinal de entrada');
@@ -31,7 +31,7 @@ ylabel('U (V)');
 xlabel('t (sec)');
 xlim([10 20]);
 
-subplot(4,1,2);
+subplot(3,1,2);
 
 plot(t_reg,thetae);
 title('Valor do potenci?metro');
@@ -39,7 +39,7 @@ ylabel('theta (degree)');
 xlabel('t (sec)');
 xlim([15 25]);
 
-subplot(4,1,3);
+subplot(3,1,3);
 
 plot(t_reg,alphae);
 title('Valor do extens?metro');
@@ -49,14 +49,6 @@ xlim([15 25]);
 
 % Reconstru??o ?ngulo total da barra ? Computation of total bar angle
 ytrend = thetae*Kp + alphae*Ke;
-
-subplot(4,1,4);
-
-plot(t_reg,ytrend);
-title('Valor do extens?metro');
-ylabel('alpha (degree)');
-xlabel('t (sec)');
-xlim([15 25]);
 
 % Filtragem seguida de elimina??o de tend?ncias % Filtering and detrending
 
