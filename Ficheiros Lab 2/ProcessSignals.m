@@ -1,4 +1,4 @@
-%close all;
+close all;
 
 trash_time = 10;
 
@@ -7,6 +7,7 @@ trash_time = 10;
 Ke = -3.922;
 Kp = 34.453;
 
+T = 0.02;
 % Obt?m os dados do ficheiro
 
 %nome = input('Nome do ficheiro?');
@@ -85,6 +86,11 @@ figure; hold on;
 plot(t_reg,yf);
 plot(t_reg,yfsim);
 xlim([15 25]);
+xlabel('Tempo [s]');
+ylabel('Velocidade Angular [degree/s]');
+legend('Sistema Real', 'Sistema Ajustado','Location','SouthEast');
+box on;
+set(gca,'XTick',15:1:25); 
 
 % Converte modelos com delay para modelos com avan?o
 
