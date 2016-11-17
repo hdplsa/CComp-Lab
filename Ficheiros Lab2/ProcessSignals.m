@@ -48,7 +48,7 @@ xlabel('t (sec)');
 xlim([15 25]);
 
 % Reconstru??o ?ngulo total da barra ? Computation of total bar angle
-ytrend = thetae*Kp; % + alphae*Ke;
+ytrend = thetae*Kp + alphae*Ke;
 
 % Filtragem seguida de elimina??o de tend?ncias % Filtering and detrending
 
