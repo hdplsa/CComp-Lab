@@ -3,9 +3,9 @@
  *
  * Code generation for model "model_real".
  *
- * Model version              : 1.16
+ * Model version              : 1.37
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Nov 17 10:33:56 2016
+ * C source code generated on : Thu Dec 15 18:13:04 2016
  *
  * Target selection: rtwin.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -800,10 +800,14 @@
 
 /* Block signals (auto storage) */
 typedef struct {
+  real_T FromWorkspace1;               /* '<Root>/From Workspace1' */
+  real_T AnalogInput[3];               /* '<S3>/Analog Input' */
   real_T Fcn;                          /* '<S3>/Fcn' */
   real_T Sum1[4];                      /* '<S2>/Sum1' */
-  real_T Sum;                          /* '<Root>/Sum' */
-  real_T Sum_d[4];                     /* '<S2>/Sum' */
+  real_T Saturation;                   /* '<Root>/Saturation' */
+  real_T Fcn1;                         /* '<S3>/Fcn1' */
+  real_T Sum1_f;                       /* '<Root>/Sum1' */
+  real_T Sum[4];                       /* '<S2>/Sum' */
 } B_model_real_T;
 
 /* Block states (auto storage) for system '<Root>' */
@@ -819,7 +823,19 @@ typedef struct {
   void *AnalogOutput_PWORK;            /* '<S3>/Analog Output' */
   struct {
     void *LoggedData;
-  } u_PWORK;                           /* '<Root>/u' */
+  } Scope_PWORK;                       /* '<S3>/Scope' */
+
+  struct {
+    void *LoggedData;
+  } Scope1_PWORK;                      /* '<S3>/Scope1' */
+
+  struct {
+    void *LoggedData;
+  } controlo_PWORK;                    /* '<Root>/controlo' */
+
+  struct {
+    void *LoggedData;
+  } e_PWORK;                           /* '<Root>/e' */
 
   struct {
     void *LoggedData;
@@ -828,6 +844,10 @@ typedef struct {
   struct {
     void *LoggedData;
   } y_PWORK;                           /* '<Root>/y' */
+
+  struct {
+    void *LoggedData;
+  } yu_PWORK;                          /* '<Root>/yu' */
 
   struct {
     int_T PrevIndex;
@@ -900,6 +920,12 @@ struct P_model_real_T_ {
                                         */
   real_T Delay_InitialCondition[4];    /* Expression: [0;0;0;0]
                                         * Referenced by: '<S2>/Delay'
+                                        */
+  real_T Saturation_UpperSat;          /* Expression: 10
+                                        * Referenced by: '<Root>/Saturation'
+                                        */
+  real_T Saturation_LowerSat;          /* Expression: -10
+                                        * Referenced by: '<Root>/Saturation'
                                         */
   uint32_T Delay_DelayLength;          /* Computed Parameter: Delay_DelayLength
                                         * Referenced by: '<S2>/Delay'

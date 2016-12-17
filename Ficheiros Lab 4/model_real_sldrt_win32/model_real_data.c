@@ -3,9 +3,9 @@
  *
  * Code generation for model "model_real".
  *
- * Model version              : 1.16
+ * Model version              : 1.37
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Nov 17 10:33:56 2016
+ * C source code generated on : Thu Dec 15 18:13:04 2016
  *
  * Target selection: rtwin.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -38,15 +38,15 @@ P_model_real_T model_real_P = {
   /*  Variable: K
    * Referenced by: '<S1>/K'
    */
-  { 0.6790893600807314, -1.41789247675388, 1.0743048663624415,
-    -0.29165482583345048 },
+  { 0.12674267252781998, -0.28654689474832346, 0.23444774033067073,
+    -0.068771540727715325 },
 
   /*  Variable: M
    * Referenced by: '<S2>/M'
    */
-  { 26.636404674578554, 20.159969653742252, 13.398100960564786,
-    7.4693824614514117 },
-  0.70043559637541775,                 /* Variable: Nbar
+  { 53.591427967416379, 36.004907767378192, 20.493643692777322,
+    9.9264775590758063 },
+  0.093802292569101192,                /* Variable: Nbar
                                         * Referenced by: '<Root>/N'
                                         */
   0.0,                                 /* Mask Parameter: AnalogOutput_FinalValue
@@ -92,6 +92,12 @@ P_model_real_T model_real_P = {
    * Referenced by: '<S2>/Delay'
    */
   { 0.0, 0.0, 0.0, 0.0 },
+  10.0,                                /* Expression: 10
+                                        * Referenced by: '<Root>/Saturation'
+                                        */
+  -10.0,                               /* Expression: -10
+                                        * Referenced by: '<Root>/Saturation'
+                                        */
   1U                                   /* Computed Parameter: Delay_DelayLength
                                         * Referenced by: '<S2>/Delay'
                                         */

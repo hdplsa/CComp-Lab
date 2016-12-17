@@ -3,9 +3,9 @@
  *
  * Code generation for model "model_real".
  *
- * Model version              : 1.16
+ * Model version              : 1.37
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Nov 17 10:33:56 2016
+ * C source code generated on : Thu Dec 15 18:13:04 2016
  *
  * Target selection: rtwin.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

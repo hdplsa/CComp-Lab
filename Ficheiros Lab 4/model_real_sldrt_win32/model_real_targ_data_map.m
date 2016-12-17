@@ -114,12 +114,20 @@
       paramMap.sections(2) = section;
       clear section
       
-      section.nData     = 1;
-      section.data(1)  = dumData; %prealloc
+      section.nData     = 3;
+      section.data(3)  = dumData; %prealloc
       
 	  ;% model_real_P.Delay_InitialCondition
 	  section.data(1).logicalSrcIdx = 18;
 	  section.data(1).dtTransOffset = 0;
+	
+	  ;% model_real_P.Saturation_UpperSat
+	  section.data(2).logicalSrcIdx = 19;
+	  section.data(2).dtTransOffset = 4;
+	
+	  ;% model_real_P.Saturation_LowerSat
+	  section.data(3).logicalSrcIdx = 20;
+	  section.data(3).dtTransOffset = 5;
 	
       nTotData = nTotData + section.nData;
       paramMap.sections(3) = section;
@@ -129,7 +137,7 @@
       section.data(1)  = dumData; %prealloc
       
 	  ;% model_real_P.Delay_DelayLength
-	  section.data(1).logicalSrcIdx = 19;
+	  section.data(1).logicalSrcIdx = 21;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
@@ -177,24 +185,40 @@
     ;%
     ;% Auto data (model_real_B)
     ;%
-      section.nData     = 4;
-      section.data(4)  = dumData; %prealloc
+      section.nData     = 8;
+      section.data(8)  = dumData; %prealloc
       
-	  ;% model_real_B.Fcn
+	  ;% model_real_B.FromWorkspace1
 	  section.data(1).logicalSrcIdx = 0;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% model_real_B.Sum1
+	  ;% model_real_B.AnalogInput
 	  section.data(2).logicalSrcIdx = 1;
 	  section.data(2).dtTransOffset = 1;
 	
-	  ;% model_real_B.Sum
+	  ;% model_real_B.Fcn
 	  section.data(3).logicalSrcIdx = 2;
-	  section.data(3).dtTransOffset = 5;
+	  section.data(3).dtTransOffset = 4;
 	
-	  ;% model_real_B.Sum_d
+	  ;% model_real_B.Sum1
 	  section.data(4).logicalSrcIdx = 3;
-	  section.data(4).dtTransOffset = 6;
+	  section.data(4).dtTransOffset = 5;
+	
+	  ;% model_real_B.Saturation
+	  section.data(5).logicalSrcIdx = 4;
+	  section.data(5).dtTransOffset = 9;
+	
+	  ;% model_real_B.Fcn1
+	  section.data(6).logicalSrcIdx = 5;
+	  section.data(6).dtTransOffset = 10;
+	
+	  ;% model_real_B.Sum1_f
+	  section.data(7).logicalSrcIdx = 6;
+	  section.data(7).dtTransOffset = 11;
+	
+	  ;% model_real_B.Sum
+	  section.data(8).logicalSrcIdx = 7;
+	  section.data(8).dtTransOffset = 12;
 	
       nTotData = nTotData + section.nData;
       sigMap.sections(1) = section;
@@ -252,8 +276,8 @@
       dworkMap.sections(1) = section;
       clear section
       
-      section.nData     = 6;
-      section.data(6)  = dumData; %prealloc
+      section.nData     = 10;
+      section.data(10)  = dumData; %prealloc
       
 	  ;% model_real_DW.FromWorkspace1_PWORK.TimePtr
 	  section.data(1).logicalSrcIdx = 1;
@@ -267,17 +291,33 @@
 	  section.data(3).logicalSrcIdx = 3;
 	  section.data(3).dtTransOffset = 2;
 	
-	  ;% model_real_DW.u_PWORK.LoggedData
+	  ;% model_real_DW.Scope_PWORK.LoggedData
 	  section.data(4).logicalSrcIdx = 4;
 	  section.data(4).dtTransOffset = 3;
 	
-	  ;% model_real_DW.x_PWORK.LoggedData
+	  ;% model_real_DW.Scope1_PWORK.LoggedData
 	  section.data(5).logicalSrcIdx = 5;
 	  section.data(5).dtTransOffset = 4;
 	
-	  ;% model_real_DW.y_PWORK.LoggedData
+	  ;% model_real_DW.controlo_PWORK.LoggedData
 	  section.data(6).logicalSrcIdx = 6;
 	  section.data(6).dtTransOffset = 5;
+	
+	  ;% model_real_DW.e_PWORK.LoggedData
+	  section.data(7).logicalSrcIdx = 7;
+	  section.data(7).dtTransOffset = 6;
+	
+	  ;% model_real_DW.x_PWORK.LoggedData
+	  section.data(8).logicalSrcIdx = 8;
+	  section.data(8).dtTransOffset = 7;
+	
+	  ;% model_real_DW.y_PWORK.LoggedData
+	  section.data(9).logicalSrcIdx = 9;
+	  section.data(9).dtTransOffset = 8;
+	
+	  ;% model_real_DW.yu_PWORK.LoggedData
+	  section.data(10).logicalSrcIdx = 10;
+	  section.data(10).dtTransOffset = 9;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
@@ -287,7 +327,7 @@
       section.data(1)  = dumData; %prealloc
       
 	  ;% model_real_DW.FromWorkspace1_IWORK.PrevIndex
-	  section.data(1).logicalSrcIdx = 7;
+	  section.data(1).logicalSrcIdx = 11;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
@@ -320,8 +360,8 @@
   ;%
 
 
-  targMap.checksum0 = 1374944158;
-  targMap.checksum1 = 3053909891;
-  targMap.checksum2 = 845427861;
-  targMap.checksum3 = 3557003852;
+  targMap.checksum0 = 1190376655;
+  targMap.checksum1 = 226485373;
+  targMap.checksum2 = 4179958428;
+  targMap.checksum3 = 4038782941;
 

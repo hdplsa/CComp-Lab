@@ -3,9 +3,9 @@
  *
  * Code generation for model "model_real".
  *
- * Model version              : 1.16
+ * Model version              : 1.37
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Nov 17 10:33:56 2016
+ * C source code generated on : Thu Dec 15 18:13:04 2016
  *
  * Target selection: rtwin.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -54,12 +54,12 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&model_real_B.Fcn), 0, 0, 10 }
+  { (char_T *)(&model_real_B.FromWorkspace1), 0, 0, 16 }
   ,
 
   { (char_T *)(&model_real_DW.Delay_DSTATE[0]), 0, 0, 4 },
 
-  { (char_T *)(&model_real_DW.FromWorkspace1_PWORK.TimePtr), 11, 0, 6 },
+  { (char_T *)(&model_real_DW.FromWorkspace1_PWORK.TimePtr), 11, 0, 10 },
 
   { (char_T *)(&model_real_DW.FromWorkspace1_IWORK.PrevIndex), 10, 0, 1 }
 };
@@ -76,7 +76,7 @@ static DataTypeTransition rtPTransitions[] = {
 
   { (char_T *)(&model_real_P.AnalogInput_Channels[0]), 6, 0, 8 },
 
-  { (char_T *)(&model_real_P.Delay_InitialCondition[0]), 0, 0, 4 },
+  { (char_T *)(&model_real_P.Delay_InitialCondition[0]), 0, 0, 6 },
 
   { (char_T *)(&model_real_P.Delay_DelayLength), 7, 0, 1 }
 };
